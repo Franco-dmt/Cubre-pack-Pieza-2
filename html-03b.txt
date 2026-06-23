@@ -1,0 +1,72 @@
+rn { color: var(--cp-orange); }
+.cp-compare-attr__val.val-bad { color: #bdbdbd; }
+
+.cp-compare-right-wrap {
+  position: relative; overflow: hidden;
+}
+.cp-compare-right-inner {
+  transition: opacity .25s, transform .25s;
+}
+.cp-compare-right-inner.fading {
+  opacity: 0; transform: translateY(6px);
+}
+
+.cp-comparador__verdict {
+  padding: 1rem 1.75rem;
+  background: var(--cp-soft);
+  font-size: .82rem;
+  border-top: 1px solid var(--cp-border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+}
+.cp-comparador__verdict span:first-child {
+  border-right: 1px solid var(--cp-border);
+  padding-right: 1rem;
+}
+.verdict-good { color: var(--cp-green); font-weight: 700; }
+.verdict-bad { color: #bdbdbd; font-weight: 700; }
+
+/* ══════════════════════════════════════
+   FLUJO DE INSTALACIÓN
+══════════════════════════════════════ */
+.cp-flow-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.cp-flow-title-text { font-size: .82rem; font-weight: 700; color: var(--cp-dark); }
+.cp-flow-pct {
+  font-size: .78rem; font-weight: 700;
+  color: var(--cp-green); transition: color .3s;
+}
+.cp-flow-progress-wrap {
+  height: 6px; background: var(--cp-border);
+  border-radius: 3px; overflow: hidden; margin-bottom: 1.5rem;
+}
+.cp-flow-bar {
+  height: 100%; background: var(--cp-green);
+  border-radius: 3px; transition: width .4s ease;
+  width: 0%;
+}
+
+.cp-flow-scroll { overflow-x: auto; padding-bottom: .75rem; }
+.cp-flow-grid {
+  display: flex; align-items: flex-start; gap: 0; min-width: 640px;
+}
+.cp-flow-step {
+  display: flex; flex-direction: column; align-items: center;
+  flex: 1; padding: 0 .5rem;
+  cursor: pointer; position: relative;
+}
+.cp-flow-step + .cp-flow-step::before {
+  content: '';
+  position: absolute; left: 0; top: 22px;
+  width: 100%; height: 2px;
+  background: var(--cp-border);
+  z-index: 0;
+  transform: translateX(-50%);
+}
+.cp-flow-step.done + .cp-flow-step::before { background: var(--cp-green); }
+
+.cp-flow-num {
+  
