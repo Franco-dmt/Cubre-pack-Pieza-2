@@ -5,43 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CubrePack · Pieza 2</title>
   <meta name="robots" content="noindex,nofollow">
-  <style>body{font-family:Arial,sans-serif;margin:0;min-height:100vh;display:grid;place-items:center;color:#383838;background:#fff}.msg{max-width:520px;padding:24px;text-align:center}.msg b{color:#dc2e2e}</style>
-  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;font-family:Arial,sans-serif;color:#383838;background:#fff}.msg{min-height:100vh;display:grid;place-items:center;text-align:center;padding:24px}.msg b{color:#dc2e2e}iframe{border:0;width:100%;min-height:100vh;display:block}</style>
 </head>
 <body>
-  <div class="msg" id="loading"><b>Cargando pieza 2…</b><br>Si tarda más de unos segundos, recarga la página.</div>
+  <div class="msg" id="loading"><span><b>Cargando pieza 2…</b><br>Si tarda más de unos segundos, recarga la página.</span></div>
   <noscript>Activa JavaScript para ver esta pieza.</noscript>
   <script>
     (async function(){
-      const files = [
-        'p2-00.txt',
-        'p2-01.txt',
-        'p2-02.txt',
-        'p2-03.txt',
-        'p2-04.txt',
-        'p2-05.txt',
-        'p2-06.txt',
-        'p2-07.txt',
-        'p2-08.txt',
-        'p2-09.txt',
-        'p2-10.txt',
-        'p2-11.txt'
-      ];
+      const files = ['html-00.txt','html-01.txt','html-02.txt','html-03.txt','html-04.txt','html-05.txt','html-06.txt','html-07.txt','html-08.txt','html-09.txt','html-10.txt','html-11.txt','html-12.txt','html-13.txt'];
       try {
         const parts = await Promise.all(files.map(async file => {
           const res = await fetch(file + '?v=20260623', { cache: 'no-store' });
           if (!res.ok) throw new Error('No se pudo cargar ' + file);
-          return (await res.text()).trim();
+          return await res.text();
         }));
-        const binary = atob(parts.join(''));
-        const bytes = Uint8Array.from(binary, c => c.charCodeAt(0));
-        const html = new TextDecoder('utf-8').decode(pako.ungzip(bytes));
-        document.open();
-        document.write(html);
-        document.close();
+        const frame = document.createElement('iframe');
+        frame.srcdoc = parts.join('');
+        document.body.innerHTML = '';
+        document.body.appendChild(frame);
       } catch (err) {
         console.error(err);
-        document.getElementById('loading').innerHTML = '<b>No se pudo cargar la pieza.</b><br>Revisa que los archivos payload estén en la raíz del repositorio.';
+        document.getElementById('loading').innerHTML = '<span><b>No se pudo cargar la pieza.</b><br>Revisa que los archivos html estén en la raíz del repositorio.</span>';
       }
     })();
   </script>
