@@ -1,0 +1,257 @@
+el {
+  font-size: .78rem;
+  color: var(--cp-muted);
+  line-height: 1.4;
+}
+
+/* ══════════════════════════════════════
+   CALCULADORA
+══════════════════════════════════════ */
+.cp-calc-wrap {
+  background: var(--cp-white);
+  border: 1px solid var(--cp-border);
+  border-radius: var(--cp-radius-lg);
+  box-shadow: var(--cp-shadow);
+  overflow: hidden;
+}
+.cp-calc-header {
+  background: var(--cp-dark);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+.cp-calc-header h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.cp-calc-header span {
+  color: rgba(255,255,255,.6);
+  font-size: .8rem;
+}
+.cp-calc-body { padding: 2rem; }
+.cp-calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+.cp-calc-field label {
+  display: block;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--cp-muted);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: .55rem;
+}
+.cp-calc-field input[type="number"],
+.cp-calc-field select {
+  width: 100%;
+  padding: .8rem 1rem;
+  border: 2px solid var(--cp-border);
+  border-radius: var(--cp-radius);
+  font-family: Poppins, Arial, sans-serif;
+  font-size: .95rem;
+  color: var(--cp-dark);
+  background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+  appearance: none;
+  cursor: pointer;
+}
+.cp-calc-field input[type="number"]:focus,
+.cp-calc-field select:focus {
+  outline: none;
+  border-color: var(--cp-red);
+  box-shadow: 0 0 0 3px rgba(220,46,46,.12);
+}
+
+/* Slider custom */
+.cp-slider-wrap { position: relative; padding-top: .5rem; }
+.cp-slider-track {
+  position: relative;
+  height: 6px;
+  background: var(--cp-border);
+  border-radius: 3px;
+  margin-top: .75rem;
+}
+.cp-slider-fill {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: var(--cp-red);
+  border-radius: 3px;
+  transition: width .1s;
+  pointer-events: none;
+}
+.cp-range {
+  position: absolute;
+  left: 0; top: -7px;
+  width: 100%;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  height: 20px;
+}
+.cp-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--cp-red);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(220,46,46,.4);
+  transition: transform .15s, box-shadow .15s;
+}
+.cp-range::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 14px rgba(220,46,46,.5);
+}
+.cp-range:focus { outline: none; }
+.cp-slider-bubble {
+  display: inline-block;
+  background: var(--cp-red);
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 700;
+  padding: .25rem .6rem;
+  border-radius: 20px;
+  margin-bottom: .5rem;
+}
+
+/* Result cards */
+.cp-calc-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: .5rem;
+}
+.cp-calc-result-card {
+  background: var(--cp-soft);
+  border-radius: var(--cp-radius);
+  padding: 1.25rem 1.25rem 1rem;
+  border-top: 3px solid var(--cp-border);
+  transition: border-color .3s;
+}
+.cp-calc-result-card.highlight { border-top-color: var(--cp-red); }
+.cp-calc-result-card.highlight-green { border-top-color: var(--cp-green); }
+.cp-result-label {
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--cp-muted);
+  margin-bottom: .4rem;
+}
+.cp-result-val {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cp-dark);
+  line-height: 1.1;
+  transition: color .3s;
+}
+.cp-result-val.val-red { color: var(--cp-red); }
+.cp-result-val.val-green { color: var(--cp-green); }
+.cp-result-sub {
+  font-size: .72rem;
+  color: var(--cp-muted);
+  margin-top: .3rem;
+}
+
+/* Risk gauge */
+.cp-risk-gauge {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--cp-soft);
+  border-radius: var(--cp-radius);
+  border: 1px solid var(--cp-border);
+}
+.cp-risk-gauge__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .65rem;
+  font-size: .82rem;
+  font-weight: 700;
+}
+.cp-risk-gauge__label span:last-child { color: var(--cp-red); }
+.cp-risk-track {
+  height: 10px;
+  background: var(--cp-border);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.cp-risk-fill {
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #ffd600, #ff6d00, #dc2e2e);
+  transition: width .6s cubic-bezier(.4,0,.2,1);
+  width: 0%;
+}
+
+.cp-calc-note {
+  font-size: .75rem;
+  color: var(--cp-muted);
+  padding-top: 1rem;
+  border-top: 1px solid var(--cp-border);
+  margin-top: 1.25rem;
+}
+
+/* Pulse animation for results */
+@keyframes pulse-red {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.06); color: var(--cp-red); }
+  100% { transform: scale(1); }
+}
+.pulse { animation: pulse-red .35s ease-out; }
+
+/* ══════════════════════════════════════
+   ACCORDION DE DAÑOS
+══════════════════════════════════════ */
+.cp-damage-list { display: flex; flex-direction: column; gap: .75rem; }
+
+.cp-damage-item {
+  border-radius: var(--cp-radius);
+  border: 1.5px solid var(--cp-border);
+  overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+}
+.cp-damage-item:hover { box-shadow: var(--cp-shadow); }
+.cp-damage-item.active {
+  border-color: var(--cp-red);
+  box-shadow: 0 4px 16px rgba(220,46,46,.12);
+}
+
+.cp-damage-trigger {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--cp-soft);
+  cursor: pointer;
+  user-select: none;
+  transition: background .2s;
+  position: relative;
+  overflow: hidden;
+}
+.cp-damage-item.active .cp-damage-trigger { background: var(--cp-red-light); }
+.cp-damage-trigger:hover { background: #f0f0f0; }
+.cp-damage-item.active .cp-damage-trigger:hover { background: #ffe6e6; }
+
+/* Ripple */
+.cp-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(220,46,46,.18);
+  transform: scale(0);
+  animation: ripple .5s linear;
+  pointer-events: none;
+}
+@keyframes ripple {
+  to { transform: scale(4); opacity: 0; }
+}
+
+.cp-damage-icon {
+  width: 42
