@@ -1,0 +1,61 @@
+argin: 0 0 .3rem; font-size: 1.05rem; }
+.cp-checklist-sub { color: var(--cp-muted); font-size: .82rem; margin: 0; }
+
+.cp-checklist-prog-row {
+  padding: .75rem 1.75rem;
+  background: var(--cp-soft);
+  border-top: 1px solid var(--cp-border);
+  border-bottom: 1px solid var(--cp-border);
+  display: flex; align-items: center; gap: 1rem;
+}
+.cp-checklist-prog-bar {
+  flex: 1; height: 6px;
+  background: var(--cp-border); border-radius: 3px; overflow: hidden;
+}
+.cp-checklist-prog-fill {
+  height: 100%; background: var(--cp-green);
+  border-radius: 3px; transition: width .35s ease;
+  width: 0%;
+}
+.cp-checklist-prog-label {
+  font-size: .75rem; font-weight: 700; color: var(--cp-muted);
+  white-space: nowrap; transition: color .3s;
+}
+.cp-checklist-prog-label.done { color: var(--cp-green); }
+
+.cp-checklist-col-hd {
+  display: grid; grid-template-columns: 1fr 56px;
+  background: var(--cp-dark); color: #fff;
+  padding: .75rem 1.75rem;
+  font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 700;
+}
+.cp-checklist-col-hd span:last-child { text-align: center; }
+
+.cp-checklist-row {
+  display: grid; grid-template-columns: 1fr 56px;
+  align-items: center;
+  padding: 1rem 1.75rem;
+  border-bottom: 1px solid var(--cp-border);
+  cursor: pointer;
+  transition: background .2s;
+  position: relative; overflow: hidden;
+}
+.cp-checklist-row:hover { background: #fdf5f5; }
+.cp-checklist-row:nth-child(even) { background: #fafafa; }
+.cp-checklist-row:nth-child(even):hover { background: #fdf5f5; }
+.cp-checklist-row.checked {
+  background: var(--cp-green-light) !important;
+}
+.cp-checklist-label {
+  font-size: .88rem; transition: color .2s;
+}
+.cp-checklist-row.checked .cp-checklist-label {
+  text-decoration: line-through; color: var(--cp-muted);
+}
+.cp-checklist-box { display: flex; justify-content: center; }
+
+.cp-checkbox {
+  width: 24px; height: 24px;
+  border: 2px solid var(--cp-border);
+  border-radius: 5px;
+  display: inline-flex; align-items: center; justify-content: cente
