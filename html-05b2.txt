@@ -1,0 +1,20 @@
+ }
+  .cp-comparador__verdict span:first-child { border-right: none; border-bottom: 1px solid var(--cp-border); padding-bottom: .65rem; }
+  .cp-bar-label { width: 100px; font-size: .72rem; }
+  .cp-calibre-toggle { width: 100%; }
+  .cp-cal-btn { flex: 1; }
+  .cp-product-card__specs { grid-template-columns: 1fr; }
+  .cp-product-card__spec:nth-child(odd) { border-right: 0; }
+  .cp-flow-grid { flex-direction: column; min-width: 0; gap: 0; }
+  .cp-flow-step { flex-direction: row; align-items: flex-start; width: 100%; padding: .85rem 0; border-bottom: 1px solid var(--cp-border); gap: 1rem; }
+  .cp-flow-step + .cp-flow-step::before { display: none; }
+  .cp-flow-label,.cp-flow-error { text-align: left; }
+  .cp-final-cta { padding: 1.75rem 1.5rem; }
+}
+</style>
+
+<article class="cp-pieza2">
+
+<h1>Guía completa: protección de pisos en obra sin arruinar tus acabados</h1>
+<p>Si ya tienes el piso instalado y todavía quedan semanas de obra encima, este es el momento en que más puedes perder.</p>
+<p>Un p
