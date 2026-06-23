@@ -1,0 +1,68 @@
+width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--cp-border);
+  color: var(--cp-muted);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: .95rem;
+  position: relative; z-index: 1;
+  transition: background .3s, color .3s, box-shadow .3s, transform .15s;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.cp-flow-step.done .cp-flow-num {
+  background: var(--cp-green);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(46,125,50,.35);
+}
+.cp-flow-step:hover .cp-flow-num { transform: translateY(-2px); }
+.cp-flow-step.done .cp-flow-num { animation: step-bounce .4s ease-out; }
+
+@keyframes step-bounce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.3); }
+  60%  { transform: scale(.9); }
+  100% { transform: scale(1); }
+}
+
+.cp-flow-label {
+  font-size: .78rem; font-weight: 700;
+  color: var(--cp-muted); text-align: center;
+  margin-top: .6rem; line-height: 1.3;
+  transition: color .3s;
+}
+.cp-flow-step.done .cp-flow-label { color: var(--cp-green); }
+.cp-flow-error {
+  font-size: .68rem; color: var(--cp-muted);
+  text-align: center; line-height: 1.4;
+  margin-top: .3rem; padding: 0 .2rem;
+}
+.cp-flow-error strong { color: var(--cp-red); }
+.cp-flow-tip {
+  display: none;
+  background: var(--cp-green);
+  color: #fff; font-size: .65rem;
+  padding: .28rem .6rem; border-radius: 20px;
+  margin-top: .4rem; text-align: center;
+  white-space: nowrap;
+}
+.cp-flow-step.done .cp-flow-tip { display: block; }
+
+.cp-flow-hint {
+  font-size: .78rem; color: var(--cp-muted); margin-top: 1rem;
+  transition: color .3s;
+}
+.cp-flow-hint.done { color: var(--cp-green); font-weight: 700; }
+
+/* ══════════════════════════════════════
+   CHECKLIST
+══════════════════════════════════════ */
+.cp-checklist-wrap {
+  border: 1px solid var(--cp-border);
+  border-radius: var(--cp-radius-lg);
+  box-shadow: var(--cp-shadow);
+  background: var(--cp-white);
+  overflow: hidden;
+}
+.cp-checklist-head {
+  padding: 1.5rem 1.75rem 1rem;
+}
+.cp-checklist-head h3 { m
