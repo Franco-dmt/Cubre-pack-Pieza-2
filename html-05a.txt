@@ -1,0 +1,52 @@
+content: space-between;
+  flex-wrap: wrap; gap: .75rem;
+}
+.cp-product-card__brand { color: #fff; font-weight: 700; }
+.cp-product-card__tag {
+  background: rgba(255,255,255,.2); border-radius: 20px;
+  padding: .25rem .9rem; font-size: .7rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+}
+.cp-product-card__specs {
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr));
+}
+.cp-product-card__spec {
+  padding: 1.1rem 1.75rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  transition: background .2s;
+}
+.cp-product-card__spec:hover { background: rgba(255,255,255,.05); }
+.cp-product-card__spec:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.08); }
+.cp-product-card__spec-label {
+  color: rgba(255,255,255,.55); font-size: .68rem;
+  text-transform: uppercase; letter-spacing: .08em; font-weight: 700; margin-bottom: .3rem;
+}
+.cp-product-card__spec-val { color: #fff; font-weight: 700; }
+.cp-product-card__cta-row {
+  padding: 1.25rem 1.75rem; display: flex;
+  align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap; background: rgba(0,0,0,.2);
+}
+.cp-product-card__cta-copy { color: rgba(255,255,255,.82); font-size: .88rem; }
+
+/* ── BUTTONS ── */
+.cp-btn {
+  display: inline-block; background: var(--cp-red); color: #fff !important;
+  padding: .85rem 1.5rem; font-weight: 700; text-decoration: none !important;
+  border-radius: var(--cp-radius); font-family: Poppins, Arial, sans-serif;
+  font-size: .9rem; transition: background .2s, transform .15s, box-shadow .2s;
+  cursor: pointer; border: none;
+}
+.cp-btn:hover {
+  background: var(--cp-red-dark); color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(220,46,46,.35);
+}
+.cp-btn:active { transform: translateY(0); }
+
+/* ── FINAL CTA ── */
+.cp-final-cta {
+  margin: 3.5rem 0 0;
+  background: var(--cp-dark); color: #fff;
+  padding: 2.5rem 2rem; border-radius: var(--cp-radius-lg);
+  box-shadow: var(--cp-shadow); border-top: 6px solid var(--
