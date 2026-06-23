@@ -1,0 +1,66 @@
+ador {
+  background: var(--cp-white);
+  border: 1px solid var(--cp-border);
+  border-radius: var(--cp-radius-lg);
+  box-shadow: var(--cp-shadow);
+  overflow: hidden;
+}
+.cp-comparador__header {
+  background: var(--cp-dark);
+  padding: 1.25rem 1.75rem;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+}
+.cp-comparador__header h3 { color: #fff; margin: 0; font-size: .95rem; }
+.cp-mat-pills {
+  display: flex; gap: .4rem; flex-wrap: wrap;
+}
+.cp-mat-pill {
+  background: rgba(255,255,255,.1);
+  border: 1.5px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.7);
+  font-family: Poppins, Arial, sans-serif;
+  font-size: .72rem; font-weight: 700;
+  padding: .35rem .9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--cp-transition);
+}
+.cp-mat-pill.active {
+  background: var(--cp-red);
+  border-color: var(--cp-red);
+  color: #fff;
+}
+.cp-mat-pill:hover:not(.active) {
+  background: rgba(255,255,255,.18);
+  color: #fff;
+}
+
+.cp-comparador__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.cp-compare-col {
+  padding: 1.5rem 1.75rem;
+  transition: background .3s;
+}
+.cp-compare-col:first-child { border-right: 1px solid var(--cp-border); }
+.cp-compare-col__name {
+  font-size: .78rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em;
+  margin-bottom: 1rem; padding-bottom: .6rem;
+  border-bottom: 2px solid var(--cp-border);
+  color: var(--cp-muted);
+}
+.cp-compare-col.col-featured .cp-compare-col__name {
+  color: var(--cp-red);
+  border-bottom-color: var(--cp-red);
+}
+.cp-compare-attr {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: .55rem 0; border-bottom: 1px dotted var(--cp-border); font-size: .85rem;
+}
+.cp-compare-attr:last-child { border-bottom: none; }
+.cp-compare-attr__key { color: var(--cp-muted); }
+.cp-compare-attr__val { font-weight: 700; color: var(--cp-dark); }
+.cp-compare-attr__val.val-good { color: var(--cp-green); }
+.cp-compare-attr__val.val-wa
